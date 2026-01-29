@@ -6,190 +6,189 @@
 <title>Delta Detailing | Home</title>
 
 <style>
-body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#0b0b0b; color:#e6e6e6; }
-a { text-decoration:none; color:#6fae9a; }
-section { padding:70px 20px; max-width:1100px; margin:auto; }
-h2 { text-align:center; color:#6fae9a; margin-bottom:45px; }
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+  color: #e6e6e6;
+}
+a { text-decoration: none; color: #6fae9a; }
+section { padding: 70px 20px; max-width: 1100px; margin: auto; }
+h2 { text-align: center; color: #6fae9a; margin-bottom: 45px; }
 
 /* ===== HEADER ===== */
-header { background:radial-gradient(circle at top,#111,#050505); padding:60px 20px; text-align:center; }
-header img { max-width:180px; margin-bottom:15px; }
-header h1 { font-size:2.2rem; color:#6fae9a; margin-bottom:10px; }
-header p { max-width:650px; margin:0 auto 20px; color:#b7cfd8; }
-.btn {
-background: #6fae9a;
-color: #0b0b0b;
-padding: 14px 32px;
-border-radius: 5px;
-font-weight: bold;
-text-decoration: none;
-display: inline-block;
-transition:
-transform 0.2s ease,
-box-shadow 0.2s ease,
-background-color 0.2s ease;
+header {
+  background: radial-gradient(circle at top, #111, #050505);
+  padding: 60px 20px;
+  text-align: center;
 }
+header img { max-width: 180px; margin-bottom: 15px; }
+header h1 { font-size: 2.2rem; color: #6fae9a; margin-bottom: 10px; }
+header p { max-width: 650px; margin: 0 auto 20px; color: #b7cfd8; }
 
-
+/* ===== BUTTONS ===== */
+.btn {
+  background: #6fae9a;
+  color: #0b0b0b;
+  padding: 14px 32px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
 .btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 8px 20px rgba(111, 174, 154, 0.35);
-background-color: #7fc3ad;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(111, 174, 154, 0.35);
+  background-color: #7fc3ad;
 }
 
 /* ===== NAV ===== */
-nav { text-align:center; background:#111; padding:15px; }
+nav {
+  text-align: center;
+  background: #111;
+  padding: 15px;
+}
 nav a {
-position: relative;
-color: #6fae9a;
-margin: 0 15px;
-font-weight: bold;
-transition: transform 0.2s ease, color 0.2s ease;
+  position: relative;
+  color: #6fae9a;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
-
-
 nav a::after {
-content: "";
-position: absolute;
-left: 0;
-bottom: -6px;
-width: 0;
-height: 2px;
-background: #6fae9a;
-transition: width 0.25s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #6fae9a;
+  transition: width 0.25s ease;
 }
-
-
 nav a:hover {
-transform: translateY(-2px);
-color: #7fc3ad;
+  transform: translateY(-2px);
+  color: #7fc3ad;
 }
-
-
-nav a:hover::after {
-width: 100%;
-}
+nav a:hover::after { width: 100%; }
 
 /* ===== POPULAR SERVICES GRID ===== */
-.popular-services { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:30px; max-width:900px; margin:auto; }
-.service-box { background:#101010; border:1px solid #222; padding:30px; border-radius:8px; transition: transform 0.25s ease, border-color 0.25s ease; }
-.service-box:hover { transform:translateY(-4px); border-color:#6fae9a; }
-.service-box h3 { color:#6fae9a; margin-bottom:10px; }
-.service-box p { color:#b7cfd8; }
+.popular-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+.service-box {
+  background: #101010;
+  border: 1px solid #222;
+  padding: 30px;
+  border-radius: 8px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.service-box:hover { transform: translateY(-4px); border-color: #6fae9a; }
+.service-box h3 { color: #6fae9a; margin-bottom: 10px; }
+.service-box p { color: #b7cfd8; }
 
 /* ===== GALLERY PREVIEW ===== */
-.gallery-preview { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:auto; }
-.gallery-preview .gallery-item {
-height: 360px;
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
 }
-
-
-.gallery-preview img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
 .gallery-item {
-position: relative;
-height: 360px;
-overflow: hidden;
-border-radius: 8px;
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
 }
-
-<div class="lightbox" id="lightbox">
-<img src="" alt="">
-</div>
-<script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-
-
-document.querySelectorAll('.gallery-item img').forEach(img => {
-img.addEventListener('click', () => {
-lightboxImg.src = img.src;
-lightbox.classList.add('active');
-});
-});
-
-
-lightbox.addEventListener('click', () => {
-lightbox.classList.remove('active');
-lightboxImg.src = '';
-});
-
-
-document.addEventListener('keydown', e => {
-if (e.key === 'Escape') {
-lightbox.classList.remove('active');
-lightboxImg.src = '';
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
-});
-</script>
-
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+/* Overlay */
 .gallery-overlay {
-position: absolute;
-inset: 0;
-background: rgba(0,0,0,0.45);
-display: flex;
-align-items: center;
-justify-content: center;
-color: #fff;
-font-weight: bold;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.3s ease;
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
-
-
 .gallery-item:hover .gallery-overlay {
-opacity: 1;
+  opacity: 1;
 }
 
 /* ===== LIGHTBOX ===== */
 .lightbox {
-position: fixed;
-inset: 0;
-background: rgba(0,0,0,0.85);
-display: flex;
-align-items: center;
-justify-content: center;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.3s ease;
-z-index: 9999;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
 }
-
-
 .lightbox.active {
-opacity: 1;
-pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
-
-
 .lightbox img {
-max-width: 90%;
-max-height: 90%;
-border-radius: 8px;
-box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-transform: scale(0.8);
-transition: transform 0.3s ease, opacity 0.3s ease;
-opacity: 0;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transform: scale(0.8);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
 }
-
-
 .lightbox.active img {
-transform: scale(1);
-opacity: 1;
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* ===== FOOTER ===== */
-footer { background:#050505; text-align:center; padding:50px 20px; border-top:1px solid #1a1a1a; }
-footer a { color:#6fae9a; }
+footer {
+  background: #050505;
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #1a1a1a;
+}
+footer a { color: #6fae9a; }
 
 /* ===== MOBILE CTA ===== */
-.mobile-cta { display:none; position:fixed; bottom:0; width:100%; background:#6fae9a; text-align:center; padding:14px; }
-.mobile-cta a { color:#0b0b0b; font-weight:bold; display:block; }
+.mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #6fae9a;
+  text-align: center;
+  padding: 14px;
+}
+.mobile-cta a {
+  color: #0b0b0b;
+  font-weight: bold;
+  display: block;
+}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
@@ -203,17 +202,17 @@ footer a { color:#6fae9a; }
 <body>
 
 <header>
-<img src="assets/DD Logo Medium.png" alt="Delta Detailing">
-<h1>Delta Detailing</h1>
-<p>Professional automotive detailing serving Manawatu & surrounding areas.</p>
-<a class="btn" href="booking.html">Book Now</a>
+  <img src="assets/DD Logo Medium.png" alt="Delta Detailing">
+  <h1>Delta Detailing</h1>
+  <p>Professional automotive detailing serving Manawatu & surrounding areas.</p>
+  <a class="btn" href="booking.html">Book Now</a>
 </header>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="gallery.html">Gallery</a>
-<a href="booking.html">Book</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="booking.html">Book</a>
 </nav>
 
 <section>
@@ -246,31 +245,29 @@ footer a { color:#6fae9a; }
     </ul>
   </div>
 </div>
-
 <p style="text-align:center; margin-top:40px;">
-<a class="btn" href="services.html">View All Services</a>
+  <a class="btn" href="services.html">View All Services</a>
 </p>
 </section>
 
 <section>
 <h2>Recent Work</h2>
 <div class="gallery-preview">
-<div class="gallery-item">
-<img src="assets/hg1.jpg" alt="Before detailing">
-  <div class="gallery-overlay">View</div>
-</div>  
-<div class="gallery-item">
-<img src="assets/hg2.jpg" alt="Before detailing">
-  <div class="gallery-overlay">View</div>
-</div>  
-<div class="gallery-item">
-<img src="assets/hg3.jpg" alt="Before detailing">
-  <div class="gallery-overlay">View</div>
-</div>  
+  <div class="gallery-item">
+    <img src="assets/hg1.jpg" alt="Before detailing">
+    <div class="gallery-overlay">View</div>
+  </div>
+  <div class="gallery-item">
+    <img src="assets/hg2.jpg" alt="Before detailing">
+    <div class="gallery-overlay">View</div>
+  </div>
+  <div class="gallery-item">
+    <img src="assets/hg3.jpg" alt="Before detailing">
+    <div class="gallery-overlay">View</div>
+  </div>
 </div>
-  
 <p style="text-align:center; margin-top:40px;">
-<a class="btn" href="gallery.html">View Full Gallery</a>
+  <a class="btn" href="gallery.html">View Full Gallery</a>
 </p>
 </section>
 
@@ -282,75 +279,55 @@ footer a { color:#6fae9a; }
 </footer>
 
 <div class="mobile-cta"><a href="sms:0210629237">📞 Call / Text Delta Detailing</a></div>
+
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-<img src="" alt="">
+  <img src="" alt="">
 </div>
+
 <script>
-let startX = 0;
-let endX = 0;
-
-
-lightboxImg.addEventListener('touchstart', e => {
-startX = e.touches[0].clientX;
-});
-
-
-lightboxImg.addEventListener('touchmove', e => {
-endX = e.touches[0].clientX;
-});
-
-
-lightboxImg.addEventListener('touchend', () => {
-const diff = endX - startX;
-if (Math.abs(diff) > 50) { // swipe threshold
-const imgs = Array.from(document.querySelectorAll('.gallery-item img'));
-let currentIndex = imgs.findIndex(img => img.src === lightboxImg.src);
-
-
-if (diff < 0 && currentIndex < imgs.length - 1) {
-// swipe left → next image
-lightboxImg.src = imgs[currentIndex + 1].src;
-} else if (diff > 0 && currentIndex > 0) {
-// swipe right → previous image
-lightboxImg.src = imgs[currentIndex - 1].src;
-}
-}
-});
-</script>
-<script>
+// Lightbox setup
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
 
-
 document.querySelectorAll('.gallery-item img').forEach(img => {
-img.addEventListener('click', () => {
-lightboxImg.src = img.src;
-lightbox.classList.add('active');
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+  });
 });
-});
-
 
 lightbox.addEventListener('click', () => {
-lightbox.classList.remove('active');
-lightboxImg.src = '';
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
 });
 
-
+// ESC key closes lightbox
 document.addEventListener('keydown', e => {
-if (e.key === 'Escape') {
-lightbox.classList.remove('active');
-lightboxImg.src = '';
-}
+  if(e.key === 'Escape'){
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  }
+});
+
+// Swipe support for mobile
+let startX = 0, endX = 0;
+lightboxImg.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+lightboxImg.addEventListener('touchmove', e => { endX = e.touches[0].clientX; });
+lightboxImg.addEventListener('touchend', () => {
+  const diff = endX - startX;
+  const imgs = Array.from(document.querySelectorAll('.gallery-item img'));
+  let currentIndex = imgs.findIndex(img => img.src === lightboxImg.src);
+
+  if(Math.abs(diff) > 50){
+    if(diff < 0 && currentIndex < imgs.length - 1){
+      lightboxImg.src = imgs[currentIndex + 1].src;
+    } else if(diff > 0 && currentIndex > 0){
+      lightboxImg.src = imgs[currentIndex - 1].src;
+    }
+  }
 });
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
