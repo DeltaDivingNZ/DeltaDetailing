@@ -90,7 +90,14 @@ height: 100%;
 object-fit: cover;
 }
 
-  .gallery-overlay {
+.gallery-item {
+position: relative;
+height: 360px;
+overflow: hidden;
+border-radius: 8px;
+}
+
+.gallery-overlay {
 position: absolute;
 inset: 0;
 background: rgba(0,0,0,0.45);
@@ -99,8 +106,8 @@ align-items: center;
 justify-content: center;
 color: #fff;
 font-weight: bold;
-letter-spacing: 1px;
 opacity: 0;
+pointer-events: none;
 transition: opacity 0.3s ease;
 }
 
@@ -211,6 +218,7 @@ footer a { color:#6fae9a; }
 
 </body>
 </html>
+
 
 
 
