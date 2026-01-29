@@ -51,10 +51,36 @@ header p {
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
+  transition: background 0.25s ease;
 }
 
-/* ===== MOST POPULAR PACKAGES ===== */
-.popular-services {
+.btn:hover {
+  background: #5a9e88;
+}
+
+/* ===== NAVIGATION ===== */
+nav.main-nav {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 0;
+}
+
+nav.main-nav a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.25s ease;
+}
+
+nav.main-nav a:hover {
+  color: #6fae9a;
+}
+
+/* ===== SERVICES / MOST POPULAR PACKAGES ===== */
+.popular-services,
+.services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
@@ -84,12 +110,14 @@ header p {
   color: #b7cfd8;
 }
 
-.popular-services .service-box {
+.popular-services .service-box,
+.services-container .service-box {
   cursor: pointer;
 }
 
-/* ===== RECENT WORK ===== */
-.gallery-preview {
+/* ===== GALLERY ===== */
+.gallery-preview,
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -97,7 +125,8 @@ header p {
   margin: auto;
 }
 
-.gallery-preview img {
+.gallery-preview img,
+.gallery img {
   width: 100%;
   height: 360px;
   object-fit: cover;
@@ -120,7 +149,13 @@ footer a {
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .gallery-preview img {
+  .gallery-preview img,
+  .gallery img {
     height: 300px;
+  }
+
+  nav.main-nav {
+    flex-direction: column;
+    gap: 15px;
   }
 }
