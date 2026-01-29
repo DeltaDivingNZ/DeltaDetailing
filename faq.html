@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delta Detailing | FAQ</title>
+
+<style>
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+  color: #87a2ae; /* logo blue */
+}
+
+a {
+  text-decoration: none;
+  color: #6fae9a;
+  transition: color 0.2s ease;
+}
+a:hover { color: #7fc3ad; }
+
+section { padding: 70px 20px; max-width: 900px; margin: auto; }
+
+h1, h2 { color: #6fae9a; text-align: center; margin-bottom: 30px; }
+h3 { color: #87a2ae; margin-bottom: 10px; }
+
+/* ===== HEADER ===== */
+header {
+  background: radial-gradient(circle at top, #111, #050505);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header img { max-width: 180px; margin-bottom: 15px; }
+header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+
+/* ===== NAV ===== */
+nav {
+  text-align: center;
+  background: #111;
+  padding: 15px;
+}
+
+nav a {
+  position: relative;
+  color: #6fae9a;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #6fae9a;
+  transition: width 0.25s ease;
+}
+
+nav a:hover { transform: translateY(-2px); color: #7fc3ad; }
+nav a:hover::after { width: 100%; }
+
+/* ===== FAQ ===== */
+.faq-item {
+  background: #101010;
+  border-left: 4px solid #6fae9a;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  border-color: #7fc3ad;
+}
+
+.faq-question {
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  display: none;
+  line-height: 1.6;
+  color: #b7cfd8; /* softer blue for readability */
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #050505;
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #1a1a1a;
+}
+footer a { color: #6fae9a; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px){
+  section { padding: 50px 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="assets/DD Logo Medium.png" alt="Delta Detailing">
+  <h1>Delta Detailing</h1>
+  <p>Professional automotive detailing in Manawatu & surrounding areas.</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="booking.html">Book</a>
+  <a href="contact.html">Contact</a>
+  <a href="faq.html">FAQ</a>
+</nav>
+
+<section>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">1. What is included in your interior detailing service?</div>
+    <div class="faq-answer">
+      Our interior detailing includes deep vacuuming of carpets and seats, full shampooing of carpets and upholstery, leather cleaning and conditioning, dashboard and console cleaning, and odour removal. We aim to leave your interior spotless and fresh.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">2. What does the exterior detailing service involve?</div>
+    <div class="faq-answer">
+      Exterior detailing includes hand washing, clay bar treatment to remove contaminants, machine polishing, tire and rim cleaning, and protective wax or sealant application to restore gloss and protection to your paintwork.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">3. How long does a full detail take?</div>
+    <div class="faq-answer">
+      Depending on the package and vehicle size, interior or exterior details typically take 2-4 hours. Full interior & exterior detailing may take 4-6 hours. We recommend booking ahead to secure your preferred time.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">4. Do I need to book in advance?</div>
+    <div class="faq-answer">
+      Yes, booking in advance ensures we can schedule your vehicle at a convenient time and avoid delays. Walk-ins are occasionally accepted but are not guaranteed.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">5. Can you come to my location?</div>
+    <div class="faq-answer">
+      Yes, we offer mobile detailing within the Manawatu area. Please provide your location during booking, and we’ll confirm availability.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">6. Are your products safe for my car?</div>
+    <div class="faq-answer">
+      Absolutely. We use professional-grade detailing products that are safe for all car surfaces, including paint, glass, leather, and plastics.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">7. How much does a full detail cost?</div>
+    <div class="faq-answer">
+      Our prices vary depending on the package and vehicle size. Popular packages start from $139 for interior, $179 for exterior, and $499 for ceramic coating. Contact us for a custom quote.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">8. Can you remove stubborn stains or odours?</div>
+    <div class="faq-answer">
+      Yes, we specialize in stain removal and odour elimination. Results depend on the severity and age of stains, but we always aim for the best outcome.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">9. What payment methods do you accept?</div>
+    <div class="faq-answer">
+      We accept cash, bank transfer, and most major debit/credit cards. Payment is typically made at the time of service.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">10. Do you offer any warranties or guarantees?</div>
+    <div class="faq-answer">
+      Yes, we guarantee our work. If you are not satisfied with your detailing service, please contact us within 48 hours so we can address any issues.
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p><strong>Delta Detailing</strong></p>
+  <p>📞 <a href="tel:0210629237">021 062 9237</a></p>
+  <p>✉️ <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
+  <p>📘 <a href="https://www.facebook.com/DeltaDetailingNZ">Facebook</a></p>
+</footer>
+
+<script>
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const answer = q.nextElementSibling;
+    answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+  });
+});
+</script>
+
+</body>
+</html>
