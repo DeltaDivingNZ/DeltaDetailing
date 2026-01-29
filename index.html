@@ -26,6 +26,32 @@ h2 {
   margin-bottom: 45px;
 }
 
+/* ===== NAV ===== */
+nav {
+  background: #050505;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 15px 25px;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-inner a {
+  color: #e6e6e6;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.nav-inner a:hover {
+  color: #6fae9a;
+}
+
 /* ===== HEADER ===== */
 header {
   background: radial-gradient(circle at top, #111, #050505);
@@ -69,12 +95,19 @@ header p {
   margin: auto;
 }
 
+.service-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .service-box {
   background: #101010;
   border: 1px solid #222;
   padding: 30px;
   border-radius: 8px;
   transition: transform 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
 }
 
 .service-box:hover {
@@ -91,11 +124,7 @@ header p {
   color: #b7cfd8;
 }
 
-.popular-services .service-box {
-  cursor: pointer;
-}
-
-/* ===== RECENT WORK (HOME GALLERY PREVIEW) ===== */
+/* ===== RECENT WORK ===== */
 .gallery-preview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -106,8 +135,8 @@ header p {
 
 .gallery-preview img {
   width: 100%;
-  height: 360px;          /* LOCKED SIZE */
-  object-fit: cover;     /* CROPS NICELY */
+  height: 360px;
+  object-fit: cover;
   border-radius: 8px;
   border: 1px solid #222;
 }
@@ -136,6 +165,18 @@ footer a {
 
 <body>
 
+<nav>
+  <div class="nav-inner">
+    <strong>Delta Detailing</strong>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Book</a>
+    </div>
+  </div>
+</nav>
+
 <header>
   <img src="assets/DD Logo Medium.png" alt="Delta Detailing">
   <h1>Delta Detailing</h1>
@@ -147,23 +188,29 @@ footer a {
   <h2>Most Popular Packages</h2>
 
   <div class="popular-services">
-    <div class="service-box">
-      <h3>Ultimate Interior Detail</h3>
-      <p><strong>From $139</strong></p>
-      <p>Deep interior restoration including full shampoo, leather care, and detailing.</p>
-    </div>
+    <a href="services.html#ultimate-interior" class="service-link">
+      <div class="service-box">
+        <h3>Ultimate Interior Detail</h3>
+        <p><strong>From $139</strong></p>
+        <p>Deep interior restoration including full shampoo, leather care, and detailing.</p>
+      </div>
+    </a>
 
-    <div class="service-box">
-      <h3>Ultimate Exterior Detail</h3>
-      <p><strong>From $179</strong></p>
-      <p>Machine polish, decontamination, and protection for maximum gloss.</p>
-    </div>
+    <a href="services.html#ultimate-exterior" class="service-link">
+      <div class="service-box">
+        <h3>Ultimate Exterior Detail</h3>
+        <p><strong>From $179</strong></p>
+        <p>Machine polish, decontamination, and protection for maximum gloss.</p>
+      </div>
+    </a>
 
-    <div class="service-box">
-      <h3>Ceramic Coating</h3>
-      <p><strong>From $499</strong></p>
-      <p>Long-lasting protection with extreme gloss and hydrophobic finish.</p>
-    </div>
+    <a href="services.html#ceramic-coating" class="service-link">
+      <div class="service-box">
+        <h3>Ceramic Coating</h3>
+        <p><strong>From $499</strong></p>
+        <p>Long-lasting protection with extreme gloss and hydrophobic finish.</p>
+      </div>
+    </a>
   </div>
 
   <div style="text-align:center; margin-top:40px;">
