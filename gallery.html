@@ -36,7 +36,36 @@ background-color: #7fc3ad;
 }
 /* NAV */
 nav { text-align:center; background:#111; padding:15px; }
-nav a { margin:0 15px; }
+nav a {
+position: relative;
+color: #6fae9a;
+margin: 0 15px;
+font-weight: bold;
+transition: transform 0.2s ease, color 0.2s ease;
+}
+
+
+nav a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -6px;
+width: 0;
+height: 2px;
+background: #6fae9a;
+transition: width 0.25s ease;
+}
+
+
+nav a:hover {
+transform: translateY(-2px);
+color: #7fc3ad;
+}
+
+
+nav a:hover::after {
+width: 100%;
+}
 /* CAROUSEL */
 .carousel-container { position:relative; max-width:900px; margin:50px auto; overflow:hidden; border-radius:8px; border:1px solid #222; }
 .carousel-track { display:flex; transition: transform 0.5s ease; }
@@ -131,5 +160,6 @@ document.querySelector(".carousel-container").addEventListener("mouseleave", ()=
 
 </body>
 </html>
+
 
 
