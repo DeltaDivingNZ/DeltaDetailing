@@ -50,7 +50,16 @@ nav a { margin:0 15px; }
 
 /* ===== GALLERY PREVIEW ===== */
 .gallery-preview { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:auto; }
-.gallery-preview img { width:100%; height:360px; object-fit:cover; border-radius:8px; border:1px solid #222; }
+.gallery-preview .gallery-item {
+height: 360px;
+}
+
+
+.gallery-preview img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
 
 /* ===== FOOTER ===== */
 footer { background:#050505; text-align:center; padding:50px 20px; border-top:1px solid #1a1a1a; }
@@ -124,9 +133,15 @@ footer a { color:#6fae9a; }
 <section>
 <h2>Recent Work</h2>
 <div class="gallery-preview">
+<div class="gallery-item">
 <img src="assets/hg1.jpg" alt="Before detailing">
-<img src="assets/hg2.jpg" alt="After detailing">
-<img src="assets/hg3.jpg" alt="After detailing">
+</div>  
+<div class="gallery-item">
+<img src="assets/hg2.jpg" alt="Before detailing">
+</div>  
+<div class="gallery-item">
+<img src="assets/hg3.jpg" alt="Before detailing">
+</div>  
 </div>
 
 <p style="text-align:center; margin-top:40px;">
@@ -145,5 +160,6 @@ footer a { color:#6fae9a; }
 
 </body>
 </html>
+
 
 
