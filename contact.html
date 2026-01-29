@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Delta Detailing</title>
+
+<style>
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#0b0b0b; color:#e6e6e6; }
+a { text-decoration:none; color:#6fae9a; }
+section { padding:70px 20px; max-width:1100px; margin:auto; }
+h2 { text-align:center; color:#6fae9a; margin-bottom:45px; }
+p { margin-bottom:10px; }
+
+/* ===== HEADER ===== */
+header { background:radial-gradient(circle at top,#111,#050505); padding:60px 20px; text-align:center; }
+header img { max-width:180px; margin-bottom:15px; }
+header h1 { font-size:2.2rem; color:#6fae9a; margin-bottom:10px; }
+header p { max-width:650px; margin:0 auto 20px; color:#b7cfd8; }
+.btn {
+  background: #6fae9a;
+  color: #0b0b0b;
+  padding: 14px 32px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(111, 174, 154, 0.35);
+  background-color: #7fc3ad;
+}
+
+/* ===== NAV ===== */
+nav { text-align:center; background:#111; padding:15px; }
+nav a { position: relative; color: #6fae9a; margin: 0 15px; font-weight: bold; transition: transform 0.2s ease, color 0.2s ease; }
+nav a::after { content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background: #6fae9a; transition: width 0.25s ease; }
+nav a:hover { transform: translateY(-2px); color: #7fc3ad; }
+nav a:hover::after { width: 100%; }
+
+/* ===== CONTACT GRID ===== */
+.contact-container { display:grid; grid-template-columns:1fr 1fr; gap:50px; max-width:900px; margin:auto; }
+.contact-info p { font-size:1.1rem; }
+.contact-info a { color:#6fae9a; word-break: break-word; }
+.map-container iframe { width:100%; height:400px; border:0; border-radius:8px; }
+
+/* ===== FOOTER ===== */
+footer { background:#050505; text-align:center; padding:50px 20px; border-top:1px solid #1a1a1a; }
+footer a { color:#6fae9a; }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .contact-container { grid-template-columns:1fr; gap:30px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="assets/DD Logo Medium.png" alt="Delta Detailing">
+<h1>Delta Detailing</h1>
+<p>Professional automotive detailing serving Manawatu & surrounding areas.</p>
+<a class="btn" href="booking.html">Book Now</a>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="booking.html">Book</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section>
+<h2>Contact Us</h2>
+
+<div class="contact-container">
+
+  <div class="contact-info">
+    <p><strong>Chris van Rossum</strong><br>Company Director</p>
+    <p>📞 Phone: <a href="tel:0210629237">021 062 9237</a></p>
+    <p>✉️ Email: <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
+    <p>🌐 Facebook: <a href="https://www.facebook.com/DeltaDetailingNZ" target="_blank">Delta Detailing NZ</a></p>
+    <p>🏠 Address: 12 Kereru Court, Marton 4710</p>
+  </div>
+
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3188.093826862692!2d175.2763511150239!3d-40.08314537939568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d4c3e19c9c1d4d7%3A0x9f6ed6e1f2084d8d!2s12%20Kereru%20Ct%2C%20Marton%204710!5e0!3m2!1sen!2snz!4v1698364800000!5m2!1sen!2snz"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+</div>
+
+<p style="text-align:center; margin-top:40px;">
+<a class="btn" href="booking.html">Book a Service</a>
+</p>
+</section>
+
+<footer>
+<p><strong>Delta Detailing</strong></p>
+<p>📞 <a href="tel:0210629237">021 062 9237</a></p>
+<p>✉️ <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
+<p>📘 <a href="https://www.facebook.com/DeltaDetailingNZ">Facebook</a></p>
+</footer>
+
+</body>
+</html>
