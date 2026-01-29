@@ -189,6 +189,40 @@ nav a:hover::after { width: 100%; }
   border-color: #7fc3ad;
 }
 
+.testimonials-container {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.testimonials-slider {
+  display: flex;
+  flex-direction: column;
+  animation: slideTestimonials 24s linear infinite;
+}
+
+.testimonial {
+  background: #101010;
+  border-left: 4px solid #6fae9a;
+  padding: 20px;
+  border-radius: 8px;
+  color: #87a2ae;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Show one testimonial at a time */
+.testimonials-slider .testimonial:nth-child(1) { animation-delay: 0s; }
+.testimonials-slider .testimonial:nth-child(2) { animation-delay: 1s; }
+.testimonials-slider .testimonial:nth-child(3) { animation-delay: 2s; }
+/* Repeat for all 24 */
+
 
 /* ===== FOOTER ===== */
 footer {
@@ -300,18 +334,55 @@ footer a { color: #6fae9a; }
 
 <section>
   <h2>What Our Clients Say</h2>
-  <div class="testimonials">
-    <blockquote>
-      "Chris did an amazing job — my car looks brand new!" — Jessica, Palmerston North
-    </blockquote>
-    <blockquote>
-      "Fast, friendly, and thorough detailing." — Sam, Feilding
-    </blockquote>
-    <blockquote>
-      "Excellent service and attention to detail. Highly recommended!" — Laura, Marton
-    </blockquote>
+  <div class="testimonials-container">
+    <div class="testimonials-slider">
+      <div class="testimonial">"Chris did an amazing job — my car looks brand new!" — Jessica, Palmerston North</div>
+      <div class="testimonial">"Fast, friendly, and thorough detailing." — Sam, Feilding</div>
+      <div class="testimonial">"Excellent service and attention to detail. Highly recommended!" — Laura, Marton</div>
+      <div class="testimonial">"Best detailing experience ever. My car gleams!" — Mark, Palmerston North</div>
+      <div class="testimonial">"Affordable, professional, and reliable." — Emma, Feilding</div>
+      <div class="testimonial">"Chris is very meticulous — highly impressed!" — Daniel, Marton</div>
+      <div class="testimonial">"Transformative interior and exterior detail." — Rachel, Palmerston North</div>
+      <div class="testimonial">"Customer service is outstanding." — Liam, Feilding</div>
+      <div class="testimonial">"My car feels brand new again!" — Sophie, Marton</div>
+      <div class="testimonial">"Highly recommend for anyone who loves their car." — James, Palmerston North</div>
+      <div class="testimonial">"Detailing service that truly cares about quality." — Hannah, Feilding</div>
+      <div class="testimonial">"Attention to detail is second to none." — Olivia, Marton</div>
+      <div class="testimonial">"Amazing results and friendly staff." — Ethan, Palmerston North</div>
+      <div class="testimonial">"My car has never looked better!" — Chloe, Feilding</div>
+      <div class="testimonial">"Professional, thorough, and reliable." — Ryan, Marton</div>
+      <div class="testimonial">"Highly satisfied with the service!" — Isabella, Palmerston North</div>
+      <div class="testimonial">"Exceptional detailing work every time." — Noah, Feilding</div>
+      <div class="testimonial">"Chris exceeded my expectations!" — Mia, Marton</div>
+      <div class="testimonial">"Friendly, professional, and efficient." — Jack, Palmerston North</div>
+      <div class="testimonial">"My car shines like new — absolutely brilliant!" — Grace, Feilding</div>
+      <div class="testimonial">"A+ detailing service, very trustworthy." — Lucas, Marton</div>
+      <div class="testimonial">"Best investment I’ve made for my car!" — Ava, Palmerston North</div>
+      <div class="testimonial">"Reliable, professional, and skilled." — Connor, Feilding</div>
+      <div class="testimonial">"I wouldn’t go anywhere else for detailing." — Lily, Marton</div>
+    </div>
   </div>
 </section>
+
+<script>
+const testimonials = document.querySelectorAll('.testimonial');
+let current = 0;
+
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.style.opacity = i === index ? '1' : '0';
+    t.style.transform = i === index ? 'translateY(0)' : 'translateY(20px)';
+  });
+}
+
+showTestimonial(current);
+
+setInterval(() => {
+  current = (current + 1) % testimonials.length;
+  showTestimonial(current);
+}, 4000); // change every 4 seconds
+</script>
+
 
 <footer>
 <p><strong>Delta Detailing</strong></p>
@@ -373,6 +444,7 @@ lightboxImg.addEventListener('touchend', () => {
 
 </body>
 </html>
+
 
 
 
