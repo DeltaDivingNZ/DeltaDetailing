@@ -11,17 +11,22 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #0b0b0b;
-  color: #87a2ae; /* your logo blue */
+  color: #87a2ae; /* logo blue */
 }
 
 a {
   text-decoration: none;
-  color: #6fae9a; /* links green, hover effect still works */
+  color: #6fae9a; /* links green */
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #7fc3ad;
 }
 
 section {
   padding: 70px 20px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -84,11 +89,20 @@ nav a:hover::after {
 }
 
 /* ===== CONTACT SECTION ===== */
-.contact-info {
+.contact-wrapper {
   display: grid;
-  gap: 20px;
-  max-width: 700px;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 40px;
+  max-width: 900px;
   margin: auto;
+  align-items: stretch; /* equal height */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center content */
+  gap: 15px;
 }
 
 .contact-info p {
@@ -96,22 +110,17 @@ nav a:hover::after {
   line-height: 1.6;
 }
 
-.contact-info a {
-  color: #6fae9a;
-  transition: color 0.2s ease;
-}
-
-.contact-info a:hover {
-  color: #7fc3ad;
-}
-
-/* ===== MAP ===== */
 .map-container {
-  margin: 40px auto;
-  max-width: 700px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  height: 100%; /* fill the column */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* ===== FOOTER ===== */
@@ -129,8 +138,11 @@ footer a {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr; /* stack columns */
+    gap: 30px;
+  }
   .map-container iframe {
-    width: 100%;
     height: 300px;
   }
 }
@@ -154,35 +166,33 @@ footer a {
 </nav>
 
 <section>
-<h2>Contact Us</h2>
+  <h2>Contact Us</h2>
 
-<div class="contact-info">
-  <p><strong>Chris van Rossum</strong><br>Company Director</p>
-  <p>📞 Phone: <a href="tel:0210629237">021 062 9237</a></p>
-  <p>✉️ Email: <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
-  <p>📘 Facebook: <a href="https://www.facebook.com/DeltaDetailingNZ" target="_blank">Delta Detailing NZ</a></p>
-  <p>🏠 Address: 12 Kereru Court, Marton 4710</p>
-</div>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <p><strong>Chris van Rossum</strong><br>Company Director</p>
+      <p>📞 Phone: <a href="tel:0210629237">021 062 9237</a></p>
+      <p>✉️ Email: <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
+      <p>📘 Facebook: <a href="https://www.facebook.com/DeltaDetailingNZ" target="_blank">Delta Detailing NZ</a></p>
+      <p>🏠 Address: 12 Kereru Court, Marton 4710</p>
+    </div>
 
-<div class="map-container">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2956.123456789!2d175.300000!3d-40.200000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d46e1234567890%3A0xabcdef1234567890!2s12%20Kereru%20Court%2C%20Marton%204710!5e0!3m2!1sen!2snz!4v1678891234567!5m2!1sen!2snz" 
-    width="100%" 
-    height="400" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2956.123456789!2d175.300000!3d-40.200000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d46e1234567890%3A0xabcdef1234567890!2s12%20Kereru%20Court%2C%20Marton%204710!5e0!3m2!1sen!2snz!4v1678891234567!5m2!1sen!2snz" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p><strong>Delta Detailing</strong></p>
-<p>📞 <a href="tel:0210629237">021 062 9237</a></p>
-<p>✉️ <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
-<p>📘 <a href="https://www.facebook.com/DeltaDetailingNZ">Facebook</a></p>
+  <p><strong>Delta Detailing</strong></p>
+  <p>📞 <a href="tel:0210629237">021 062 9237</a></p>
+  <p>✉️ <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
+  <p>📘 <a href="https://www.facebook.com/DeltaDetailingNZ">Facebook</a></p>
 </footer>
 
 </body>
