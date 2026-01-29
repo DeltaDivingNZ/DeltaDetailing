@@ -116,6 +116,34 @@ transition: opacity 0.3s ease;
 opacity: 1;
 }
 
+/* ===== LIGHTBOX ===== */
+.lightbox {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.85);
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s ease;
+z-index: 9999;
+}
+
+
+.lightbox.active {
+opacity: 1;
+pointer-events: all;
+}
+
+
+.lightbox img {
+max-width: 90%;
+max-height: 90%;
+border-radius: 8px;
+box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}  
+
 /* ===== FOOTER ===== */
 footer { background:#050505; text-align:center; padding:50px 20px; border-top:1px solid #1a1a1a; }
 footer a { color:#6fae9a; }
@@ -132,7 +160,35 @@ footer a { color:#6fae9a; }
 }
 </style>
 </head>
+<div class="lightbox" id="lightbox">
+<img src="" alt="">
+</div>
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
 
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+img.addEventListener('click', () => {
+lightboxImg.src = img.src;
+lightbox.classList.add('active');
+});
+});
+
+
+lightbox.addEventListener('click', () => {
+lightbox.classList.remove('active');
+lightboxImg.src = '';
+});
+
+
+document.addEventListener('keydown', e => {
+if (e.key === 'Escape') {
+lightbox.classList.remove('active');
+lightboxImg.src = '';
+}
+});
+</script>
 <body>
 
 <header>
@@ -201,7 +257,7 @@ footer a { color:#6fae9a; }
   <div class="gallery-overlay">View</div>
 </div>  
 </div>
-
+  
 <p style="text-align:center; margin-top:40px;">
 <a class="btn" href="gallery.html">View Full Gallery</a>
 </p>
@@ -218,6 +274,7 @@ footer a { color:#6fae9a; }
 
 </body>
 </html>
+
 
 
 
