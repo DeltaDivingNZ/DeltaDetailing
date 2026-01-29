@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delta Detailing | Services</title>
+
+<style>
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#0b0b0b; color:#e6e6e6; }
+a { text-decoration:none; color:#6fae9a; }
+section { padding:70px 20px; max-width:1100px; margin:auto; }
+h2 { text-align:center; color:#6fae9a; margin-bottom:45px; }
+header { background:radial-gradient(circle at top,#111,#050505); padding:60px 20px; text-align:center; }
+header img { max-width:180px; margin-bottom:15px; }
+header h1 { font-size:2.2rem; color:#6fae9a; margin-bottom:10px; }
+header p { max-width:650px; margin:0 auto 20px; color:#b7cfd8; }
+.btn { background:#6fae9a; color:#0b0b0b; padding:14px 32px; border-radius:5px; font-weight:bold; display:inline-block; }
+/* NAV */
+nav { text-align:center; background:#111; padding:15px; }
+nav a { margin:0 15px; }
+/* SERVICES GRID */
+.services { display:grid; grid-template-columns:repeat(2,1fr); gap:30px; max-width:900px; margin:auto; }
+.service-box { background:#101010; border:1px solid #222; padding:30px; border-radius:8px; transition: transform 0.25s ease, border-color 0.25s ease; }
+.service-box:hover { transform:translateY(-4px); border-color:#6fae9a; }
+.service-box.ultimate, .service-box.premium { border-color:#6fae9a; }
+.service-box ul { padding-left:18px; color:#b7cfd8; }
+.service-box h3 { color:#6fae9a; margin-bottom:10px; }
+/* ADDITIONAL SERVICES */
+.additional-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:25px; max-width:900px; margin:40px auto 0; }
+.additional-card { background:#101010; border:1px solid #222; padding:30px; border-radius:8px; position:relative; transition: transform 0.25s ease, border-color 0.25s ease; }
+.additional-card:hover { transform:translateY(-4px); border-color:#6fae9a; }
+.additional-card h3 { margin-top:15px; color:#6fae9a; }
+.additional-card p { color:#b7cfd8; font-size:0.95rem; }
+.badge { position:absolute; top:15px; right:15px; background:#6fae9a; color:#0b0b0b; font-size:0.75rem; font-weight:bold; padding:4px 8px; border-radius:4px; }
+.presale { grid-column:3; }
+/* FOOTER */
+footer { background:#050505; text-align:center; padding:50px 20px; border-top:1px solid #1a1a1a; }
+footer a { color:#6fae9a; }
+/* MOBILE CTA */
+.mobile-cta { display:none; position:fixed; bottom:0; width:100%; background:#6fae9a; text-align:center; padding:14px; }
+.mobile-cta a { color:#0b0b0b; font-weight:bold; display:block; }
+@media(max-width:768px){
+.services { grid-template-columns:1fr; }
+.additional-grid { grid-template-columns:1fr; }
+.presale { grid-column:auto; }
+.mobile-cta { display:block; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="DD Logo Medium.png" alt="Delta Detailing">
+<h1>Delta Detailing</h1>
+<p>Professional automotive detailing serving Manawatu & surrounding areas.</p>
+<a class="btn" href="booking.html">Book Now</a>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="booking.html">Book</a>
+</nav>
+
+<section>
+<h2>Our Services & Pricing</h2>
+<div class="services">
+<div class="service-box premium">
+<h3>Premium Interior Detail</h3>
+<p><strong>From $89</strong></p>
+<ul>
+<li>Interior vacuumed</li>
+<li>Interior surfaces wiped down</li>
+<li>Inside windows cleaned</li>
+<li>Interior plastic/vinyl dressed</li>
+<li>Floor mats shampooed</li>
+<li>Rubber mats cleaned & dressed</li>
+</ul>
+</div>
+
+<div class="service-box premium">
+<h3>Premium Exterior Detail</h3>
+<p><strong>From $99</strong></p>
+<ul>
+<li>Snow foam pre-wash</li>
+<li>High pressure rinse</li>
+<li>Vehicle hand washed</li>
+<li>Door jambs cleaned</li>
+<li>Wheel faces & tyres dressed</li>
+<li>Exterior plastics dressed</li>
+<li>Protective coating applied</li>
+</ul>
+</div>
+
+<div class="service-box ultimate">
+<h3>Ultimate Interior Detail</h3>
+<p><strong>From $139</strong></p>
+<ul>
+<li>Everything in Premium Interior</li>
+<li>Full upholstery shampoo</li>
+<li>Leather clean & conditioning</li>
+</ul>
+</div>
+
+<div class="service-box ultimate">
+<h3>Ultimate Exterior Detail</h3>
+<p><strong>From $179</strong></p>
+<ul>
+<li>Everything in Premium Exterior</li>
+<li>Clay bar decontamination</li>
+<li>Chemical decontamination</li>
+<li>Machine cut & polish</li>
+</ul>
+</div>
+</div>
+
+<h2>Additional Services</h2>
+<div class="additional-grid">
+<div class="additional-card">
+<span class="badge">From $299</span>
+<h3>Full Paint Correction</h3>
+<p>Multi-stage machine polishing to remove swirls, scratches, and oxidation, restoring deep gloss.</p>
+</div>
+<div class="additional-card">
+<span class="badge">From $499</span>
+<h3>Ceramic Coating</h3>
+<p>Long-lasting protection with extreme gloss, hydrophobic properties, and UV resistance.</p>
+</div>
+<div class="additional-card">
+<span class="badge">From $79</span>
+<h3>Headlight Restoration</h3>
+<p>Removes oxidation and cloudiness to improve clarity, safety, and appearance.</p>
+</div>
+<div class="additional-card">
+<span class="badge">From $59</span>
+<h3>Engine Bay Detail</h3>
+<p>Careful cleaning and dressing for a clean, factory-fresh engine bay.</p>
+</div>
+<div class="additional-card presale">
+<span class="badge">From $199</span>
+<h3>Pre-Sale Detail</h3>
+<p>A comprehensive detail designed to maximise your vehicle’s resale value.</p>
+</div>
+</div>
+
+<p style="text-align:center; margin-top:30px;">
+<a class="btn" href="booking.html">Book Your Service</a>
+</p>
+</section>
+
+<footer>
+<p><strong>Delta Detailing</strong></p>
+<p>📞 <a href="tel:0210629237">021 062 9237</a></p>
+<p>✉️ <a href="mailto:deltadetailingnz@gmail.com">deltadetailingnz@gmail.com</a></p>
+<p>📘 <a href="https://www.facebook.com/DeltaDetailingNZ">Facebook</a></p>
+</footer>
+
+<div class="mobile-cta"><a href="sms:0210629237">📞 Call / Text Delta Detailing</a></div>
+
+</body>
+</html>
