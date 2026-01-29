@@ -24,6 +24,13 @@ nav a { margin:0 15px; }
 .trust h3 { margin-bottom:10px; color:#6fae9a; }
 .trust p { color:#b7cfd8; }
 /* MINI SERVICES */
+  .popular-services {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 30px;
+max-width: 900px;
+margin: auto;
+}
 .services-preview { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; max-width:900px; margin:auto; }
 .service-preview { background:#101010; border:1px solid #222; padding:20px; border-radius:8px; text-align:center; }
 .service-preview h3 { margin-bottom:10px; color:#6fae9a; }
@@ -86,28 +93,35 @@ border-radius: 8px;
 </section>
 
 <section>
-<h2>Our Services (Preview)</h2>
-<div class="services-preview">
-<div class="service-preview">
-<h3>Premium Interior</h3>
-<p>From $89</p>
+<h2>Most Popular Packages</h2>
+
+
+<div class="popular-services">
+<div class="service-box ultimate">
+<h3>Ultimate Interior Detail</h3>
+<p><strong>From $139</strong></p>
+<p>Deep interior restoration including full shampoo, leather care, and detailing.</p>
 </div>
-<div class="service-preview">
-<h3>Premium Exterior</h3>
-<p>From $99</p>
+
+
+<div class="service-box ultimate">
+<h3>Ultimate Exterior Detail</h3>
+<p><strong>From $179</strong></p>
+<p>Machine polish, decontamination, and protection for maximum gloss.</p>
 </div>
-<div class="service-preview">
-<h3>Ultimate Interior</h3>
-<p>From $139</p>
+
+
+<div class="service-box premium">
+<h3>Ceramic Coating</h3>
+<p><strong>From $499</strong></p>
+<p>Long-lasting protection with extreme gloss and hydrophobic finish.</p>
 </div>
-<div class="service-preview">
-<h3>Ultimate Exterior</h3>
-<p>From $179</p>
 </div>
+
+
+<div style="text-align:center; margin-top:40px;">
+<a class="btn" href="services.html">View All Services</a>
 </div>
-<p style="text-align:center; margin-top:20px;">
-<a class="btn" href="services.html">See All Services</a>
-</p>
 </section>
 
 <section class="home-gallery">
@@ -138,4 +152,5 @@ border-radius: 8px;
 </body>
 
 </html>
+
 
