@@ -97,6 +97,36 @@ overflow: hidden;
 border-radius: 8px;
 }
 
+<div class="lightbox" id="lightbox">
+<img src="" alt="">
+</div>
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+img.addEventListener('click', () => {
+lightboxImg.src = img.src;
+lightbox.classList.add('active');
+});
+});
+
+
+lightbox.addEventListener('click', () => {
+lightbox.classList.remove('active');
+lightboxImg.src = '';
+});
+
+
+document.addEventListener('keydown', e => {
+if (e.key === 'Escape') {
+lightbox.classList.remove('active');
+lightboxImg.src = '';
+}
+});
+</script>
+
 .gallery-overlay {
 position: absolute;
 inset: 0;
@@ -142,7 +172,16 @@ max-width: 90%;
 max-height: 90%;
 border-radius: 8px;
 box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}  
+transform: scale(0.8);
+transition: transform 0.3s ease, opacity 0.3s ease;
+opacity: 0;
+}
+
+
+.lightbox.active img {
+transform: scale(1);
+opacity: 1;
+}
 
 /* ===== FOOTER ===== */
 footer { background:#050505; text-align:center; padding:50px 20px; border-top:1px solid #1a1a1a; }
@@ -247,6 +286,38 @@ footer a { color:#6fae9a; }
 <img src="" alt="">
 </div>
 <script>
+let startX = 0;
+let endX = 0;
+
+
+lightboxImg.addEventListener('touchstart', e => {
+startX = e.touches[0].clientX;
+});
+
+
+lightboxImg.addEventListener('touchmove', e => {
+endX = e.touches[0].clientX;
+});
+
+
+lightboxImg.addEventListener('touchend', () => {
+const diff = endX - startX;
+if (Math.abs(diff) > 50) { // swipe threshold
+const imgs = Array.from(document.querySelectorAll('.gallery-item img'));
+let currentIndex = imgs.findIndex(img => img.src === lightboxImg.src);
+
+
+if (diff < 0 && currentIndex < imgs.length - 1) {
+// swipe left → next image
+lightboxImg.src = imgs[currentIndex + 1].src;
+} else if (diff > 0 && currentIndex > 0) {
+// swipe right → previous image
+lightboxImg.src = imgs[currentIndex - 1].src;
+}
+}
+});
+</script>
+<script>
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
 
@@ -274,6 +345,7 @@ lightboxImg.src = '';
 </script>
 </body>
 </html>
+
 
 
 
