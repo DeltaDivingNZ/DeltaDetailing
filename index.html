@@ -165,30 +165,6 @@ nav a:hover::after { width: 100%; }
   opacity: 1;
 }
 
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.testimonials blockquote {
-  background: #101010;
-  border-left: 4px solid #6fae9a;
-  padding: 20px;
-  border-radius: 8px;
-  color: #87a2ae;
-  font-style: italic;
-  line-height: 1.5;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.testimonials blockquote:hover {
-  transform: translateY(-4px);
-  border-color: #7fc3ad;
-}
-
 .testimonials-container {
   max-width: 900px;
   margin: 0 auto;
@@ -199,8 +175,8 @@ nav a:hover::after { width: 100%; }
 
 .testimonials-slider {
   display: flex;
-  flex-direction: column;
-  animation: slideTestimonials 24s linear infinite;
+  gap: 20px;
+  transition: transform 0.5s ease;
 }
 
 .testimonial {
@@ -211,17 +187,13 @@ nav a:hover::after { width: 100%; }
   color: #87a2ae;
   font-style: italic;
   line-height: 1.5;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
+  min-width: 250px; /* ensures multiple fit on screen */
+  flex-shrink: 0;
+  opacity: 1;
+  transform: translateY(0);
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Show one testimonial at a time */
-.testimonials-slider .testimonial:nth-child(1) { animation-delay: 0s; }
-.testimonials-slider .testimonial:nth-child(2) { animation-delay: 1s; }
-.testimonials-slider .testimonial:nth-child(3) { animation-delay: 2s; }
-/* Repeat for all 24 */
 
 
 /* ===== FOOTER ===== */
@@ -365,22 +337,19 @@ footer a { color: #6fae9a; }
 </section>
 
 <script>
+const slider = document.querySelector('.testimonials-slider');
 const testimonials = document.querySelectorAll('.testimonial');
-let current = 0;
+let index = 0;
 
-function showTestimonial(index) {
-  testimonials.forEach((t, i) => {
-    t.style.opacity = i === index ? '1' : '0';
-    t.style.transform = i === index ? 'translateY(0)' : 'translateY(20px)';
-  });
+function slideTestimonials() {
+  const testimonialWidth = testimonials[0].offsetWidth + 20; // width + gap
+  index++;
+  if(index >= testimonials.length) index = 0;
+  slider.style.transform = `translateX(-${testimonialWidth * index}px)`;
 }
 
-showTestimonial(current);
-
-setInterval(() => {
-  current = (current + 1) % testimonials.length;
-  showTestimonial(current);
-}, 4000); // change every 4 seconds
+// Slide every 4 seconds
+setInterval(slideTestimonials, 4000);
 </script>
 
 
@@ -444,6 +413,7 @@ lightboxImg.addEventListener('touchend', () => {
 
 </body>
 </html>
+
 
 
 
