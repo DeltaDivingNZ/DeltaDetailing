@@ -160,35 +160,7 @@ footer a { color:#6fae9a; }
 }
 </style>
 </head>
-<div class="lightbox" id="lightbox">
-<img src="" alt="">
-</div>
-<script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
 
-
-document.querySelectorAll('.gallery-item img').forEach(img => {
-img.addEventListener('click', () => {
-lightboxImg.src = img.src;
-lightbox.classList.add('active');
-});
-});
-
-
-lightbox.addEventListener('click', () => {
-lightbox.classList.remove('active');
-lightboxImg.src = '';
-});
-
-
-document.addEventListener('keydown', e => {
-if (e.key === 'Escape') {
-lightbox.classList.remove('active');
-lightboxImg.src = '';
-}
-});
-</script>
 <body>
 
 <header>
@@ -271,9 +243,38 @@ lightboxImg.src = '';
 </footer>
 
 <div class="mobile-cta"><a href="sms:0210629237">📞 Call / Text Delta Detailing</a></div>
+<div class="lightbox" id="lightbox">
+<img src="" alt="">
+</div>
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
 
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+img.addEventListener('click', () => {
+lightboxImg.src = img.src;
+lightbox.classList.add('active');
+});
+});
+
+
+lightbox.addEventListener('click', () => {
+lightbox.classList.remove('active');
+lightboxImg.src = '';
+});
+
+
+document.addEventListener('keydown', e => {
+if (e.key === 'Escape') {
+lightbox.classList.remove('active');
+lightboxImg.src = '';
+}
+});
+</script>
 </body>
 </html>
+
 
 
 
