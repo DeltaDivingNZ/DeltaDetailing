@@ -4,6 +4,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #0b0b0b;
   color: #e6e6e6;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 section {
@@ -18,7 +24,7 @@ h2 {
   margin-bottom: 45px;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER / NAVBAR ===== */
 header {
   background: radial-gradient(circle at top, #111, #050505);
   padding: 80px 20px;
@@ -49,38 +55,13 @@ header p {
   padding: 14px 32px;
   border-radius: 5px;
   font-weight: bold;
-  text-decoration: none;
   display: inline-block;
-  transition: background 0.25s ease;
+  text-align: center;
 }
 
-.btn:hover {
-  background: #5a9e88;
-}
-
-/* ===== NAVIGATION ===== */
-nav.main-nav {
-  background: #111;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 15px 0;
-}
-
-nav.main-nav a {
-  color: #e6e6e6;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.25s ease;
-}
-
-nav.main-nav a:hover {
-  color: #6fae9a;
-}
-
-/* ===== SERVICES / MOST POPULAR PACKAGES ===== */
+/* ===== SERVICES / POPULAR PACKAGES ===== */
 .popular-services,
-.services-container {
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
@@ -88,7 +69,8 @@ nav.main-nav a:hover {
   margin: auto;
 }
 
-.service-box {
+.service-box,
+.service-item {
   background: #101010;
   border: 1px solid #222;
   padding: 30px;
@@ -96,28 +78,30 @@ nav.main-nav a:hover {
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.service-box:hover {
+.service-box:hover,
+.service-item:hover {
   transform: translateY(-4px);
   border-color: #6fae9a;
 }
 
-.service-box h3 {
+.service-box h3,
+.service-item h3 {
   color: #6fae9a;
   margin-top: 0;
 }
 
-.service-box p {
+.service-box p,
+.service-item p {
   color: #b7cfd8;
 }
 
 .popular-services .service-box,
-.services-container .service-box {
+.services-grid .service-item {
   cursor: pointer;
 }
 
 /* ===== GALLERY ===== */
-.gallery-preview,
-.gallery {
+.gallery-preview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -134,6 +118,54 @@ nav.main-nav a:hover {
   border: 1px solid #222;
 }
 
+/* ===== BOOKING FORM ===== */
+.booking-form {
+  max-width: 700px;
+  margin: auto;
+  background: #101010;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #b7cfd8;
+  font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #222;
+  background: #0b0b0b;
+  color: #e6e6e6;
+  font-size: 1rem;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: #6fae9a;
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 14px 0;
+  background: #6fae9a;
+  border: none;
+  color: #0b0b0b;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: #050505;
@@ -147,15 +179,18 @@ footer a {
   text-decoration: none;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
   .gallery-preview img,
   .gallery img {
     height: 300px;
   }
 
-  nav.main-nav {
-    flex-direction: column;
-    gap: 15px;
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
   }
 }
