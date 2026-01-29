@@ -5,48 +5,197 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Car Detailing Manawatu | Delta Detailing</title>
 
-<link rel="stylesheet" href="assets/styles.css">
-</head>
+<style>
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+  color: #e6e6e6;
+}
 
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #6fae9a;
+  margin-bottom: 45px;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: radial-gradient(circle at top, #111, #050505);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+header img {
+  max-width: 180px;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: #6fae9a;
+  margin-bottom: 10px;
+}
+
+header p {
+  max-width: 650px;
+  margin: 0 auto 20px;
+  color: #b7cfd8;
+}
+
+.btn {
+  background: #6fae9a;
+  color: #0b0b0b;
+  padding: 14px 32px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ===== NAVIGATION ===== */
+nav.main-nav {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px 0;
+}
+
+nav.main-nav a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav.main-nav a:hover {
+  color: #6fae9a;
+}
+
+/* ===== MOST POPULAR PACKAGES ===== */
+.popular-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.service-box {
+  background: #101010;
+  border: 1px solid #222;
+  padding: 30px;
+  border-radius: 8px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+  border-color: #6fae9a;
+}
+
+.service-box h3 {
+  color: #6fae9a;
+  margin-top: 0;
+}
+
+.service-box p {
+  color: #b7cfd8;
+}
+
+.popular-services .service-box {
+  cursor: pointer;
+}
+
+/* ===== RECENT WORK (HOME GALLERY PREVIEW) ===== */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.gallery-preview img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #050505;
+  text-align: center;
+  padding: 50px 20px;
+  border-top: 1px solid #1a1a1a;
+}
+
+footer a {
+  color: #6fae9a;
+  text-decoration: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .gallery-preview img {
+    height: 300px;
+  }
+
+  nav.main-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+</style>
+</head>
 <body>
 
+<!-- HEADER -->
 <header>
-<img src="assets/DD Logo Medium.png" alt="Delta Detailing">
-<h1>Delta Detailing</h1>
-<p>Professional automotive detailing serving Manawatu & surrounding areas.</p>
-<a class="btn" href="booking.html">Book Now</a>
+  <img src="assets/DD Logo Medium.png" alt="Delta Detailing">
+  <h1>Delta Detailing</h1>
+  <p>Professional automotive detailing serving Manawatu & surrounding areas.</p>
+  <a class="btn" href="booking.html">Book Now</a>
 </header>
 
-
-<!-- NAV BAR (identical to other pages) -->
-<nav class="main-nav" style="background:#111; text-align:center; padding:10px 0; margin-bottom:40px;">
-<a href="index.html" style="color:#e6e6e6; text-decoration:none; margin:0 20px;">Home</a>
-<a href="services.html" style="color:#e6e6e6; text-decoration:none; margin:0 20px;">Services</a>
-<a href="gallery.html" style="color:#e6e6e6; text-decoration:none; margin:0 20px;">Gallery</a>
-<a href="booking.html" style="color:#e6e6e6; text-decoration:none; margin:0 20px;">Book Now</a>
+<!-- NAVIGATION -->
+<nav class="main-nav">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="booking.html">Book Now</a>
 </nav>
 
+<!-- MOST POPULAR PACKAGES -->
 <section>
   <h2>Most Popular Packages</h2>
-
   <div class="popular-services">
-    <a href="services.html#ultimate-interior" class="service-box">
+    <div class="service-box" onclick="location.href='services.html#ultimate-interior-detail'">
       <h3>Ultimate Interior Detail</h3>
       <p><strong>From $139</strong></p>
       <p>Deep interior restoration including full shampoo, leather care, and detailing.</p>
-    </a>
+    </div>
 
-    <a href="services.html#ultimate-exterior" class="service-box">
+    <div class="service-box" onclick="location.href='services.html#ultimate-exterior-detail'">
       <h3>Ultimate Exterior Detail</h3>
       <p><strong>From $179</strong></p>
       <p>Machine polish, decontamination, and protection for maximum gloss.</p>
-    </a>
+    </div>
 
-    <a href="services.html#ceramic-coating" class="service-box">
+    <div class="service-box" onclick="location.href='services.html#ceramic-coating'">
       <h3>Ceramic Coating</h3>
       <p><strong>From $499</strong></p>
       <p>Long-lasting protection with extreme gloss and hydrophobic finish.</p>
-    </a>
+    </div>
   </div>
 
   <div style="text-align:center; margin-top:40px;">
@@ -54,9 +203,9 @@
   </div>
 </section>
 
+<!-- RECENT WORK -->
 <section>
   <h2>Recent Work</h2>
-
   <div class="gallery-preview">
     <img src="assets/b1.jpg" alt="Before detailing">
     <img src="assets/a1.jpg" alt="After detailing">
@@ -68,6 +217,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p><strong>Delta Detailing</strong></p>
   <p>📞 <a href="tel:0210629237">021 062 9237</a></p>
@@ -76,4 +226,3 @@
 
 </body>
 </html>
-
