@@ -90,6 +90,25 @@ height: 100%;
 object-fit: cover;
 }
 
+  .gallery-overlay {
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,0.45);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+font-weight: bold;
+letter-spacing: 1px;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+
+.gallery-item:hover .gallery-overlay {
+opacity: 1;
+}
+
 /* ===== FOOTER ===== */
 footer { background:#050505; text-align:center; padding:50px 20px; border-top:1px solid #1a1a1a; }
 footer a { color:#6fae9a; }
@@ -164,12 +183,15 @@ footer a { color:#6fae9a; }
 <div class="gallery-preview">
 <div class="gallery-item">
 <img src="assets/hg1.jpg" alt="Before detailing">
+  <div class="gallery-overlay">View</div>
 </div>  
 <div class="gallery-item">
 <img src="assets/hg2.jpg" alt="Before detailing">
+  <div class="gallery-overlay">View</div>
 </div>  
 <div class="gallery-item">
 <img src="assets/hg3.jpg" alt="Before detailing">
+  <div class="gallery-overlay">View</div>
 </div>  
 </div>
 
@@ -189,6 +211,7 @@ footer a { color:#6fae9a; }
 
 </body>
 </html>
+
 
 
 
