@@ -43,8 +43,19 @@ footer { background:#050505; text-align:center; padding:50px 20px; border-top:1p
 footer a { color:#6fae9a; }
 /*GALLERY OPTIONS */
 /* ===== HOME PAGE SERVICE HOVER CONSISTENCY ===== */
-.popular-services .service-box {
-cursor: pointer;
+.service-box {
+background: #101010;
+border: 1px solid #222;
+padding: 30px;
+border-radius: 8px;
+transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+
+.service-box:hover {
+transform: translateY(-4px);
+border-color: #6fae9a;
+}
 }
 .gallery-preview {
 display: grid;
@@ -156,6 +167,7 @@ border-radius: 8px;
 </body>
 
 </html>
+
 
 
 
