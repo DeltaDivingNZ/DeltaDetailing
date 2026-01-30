@@ -15,57 +15,47 @@ header img { max-width:180px; margin-bottom:15px; }
 header h1 { font-size:2.2rem; color:#6fae9a; margin-bottom:10px; }
 header p { max-width:650px; margin:0 auto 20px; color:#b7cfd8; }
 .btn {
-background: #6fae9a;
-color: #0b0b0b;
-padding: 14px 32px;
-border-radius: 5px;
-font-weight: bold;
-text-decoration: none;
-display: inline-block;
-transition:
-transform 0.2s ease,
-box-shadow 0.2s ease,
-background-color 0.2s ease;
+  background: #6fae9a;
+  color: #0b0b0b;
+  padding: 14px 32px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
-
-
 .btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 8px 20px rgba(111, 174, 154, 0.35);
-background-color: #7fc3ad;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(111, 174, 154, 0.35);
+  background-color: #7fc3ad;
 }
 /* NAV */
 nav { text-align:center; background:#111; padding:15px; }
 nav a {
-position: relative;
-color: #6fae9a;
-margin: 0 15px;
-font-weight: bold;
-transition: transform 0.2s ease, color 0.2s ease;
+  position: relative;
+  color: #6fae9a;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
-
-
 nav a::after {
-content: "";
-position: absolute;
-left: 0;
-bottom: -6px;
-width: 0;
-height: 2px;
-background: #6fae9a;
-transition: width 0.25s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #6fae9a;
+  transition: width 0.25s ease;
 }
-
-
 nav a:hover {
-transform: translateY(-2px);
-color: #7fc3ad;
+  transform: translateY(-2px);
+  color: #7fc3ad;
 }
-
-
-nav a:hover::after {
-width: 100%;
-}
+nav a:hover::after { width: 100%; }
 /* BOOKING FORM */
 .booking-form { background:#101010; border:1px solid #222; border-radius:10px; padding:40px; max-width:900px; margin:40px auto; }
 .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
@@ -74,11 +64,38 @@ width: 100%;
 label { margin-bottom:6px; font-weight:bold; }
 input, textarea { padding:12px; background:#151515; border:1px solid #222; color:#e6e6e6; border-radius:6px; font-size:0.95rem; }
 textarea { resize:none; }
-/* MULTI-SELECT */
+/* MULTI-SELECT DROPDOWN */
 .multi-select { position:relative; }
-.multi-select-display { padding:12px; background:#151515; border:1px solid #222; border-radius:6px; cursor:pointer; display:flex; justify-content: space-between; align-items:center; }
-.multi-select-options { position:absolute; top:100%; left:0; right:0; background:#151515; border:1px solid #222; border-radius:6px; display:none; flex-direction: column; max-height:180px; overflow-y:auto; z-index:100; }
-.multi-select-options label { padding:8px 12px; cursor:pointer; display:flex; align-items:center; }
+.multi-select-display {
+  padding:12px;
+  background:#151515;
+  border:1px solid #222;
+  border-radius:6px;
+  cursor:pointer;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.multi-select-options {
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  background:#151515;
+  border:1px solid #222;
+  border-radius:6px;
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.25s ease;
+  flex-direction: column;
+  z-index:100;
+}
+.multi-select-options label {
+  padding:8px 12px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+}
 .multi-select-options label:hover { background:#1a1a1a; }
 .multi-select input[type=checkbox] { margin-right:10px; }
 /* RADIO BUTTONS */
@@ -92,12 +109,11 @@ footer a { color:#6fae9a; }
 .mobile-cta { display:none; position:fixed; bottom:0; width:100%; background:#6fae9a; text-align:center; padding:14px; }
 .mobile-cta a { color:#0b0b0b; font-weight:bold; display:block; }
 @media(max-width:768px){
-.form-grid { grid-template-columns:1fr; }
-.mobile-cta { display:block; }
+  .form-grid { grid-template-columns:1fr; }
+  .mobile-cta { display:block; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -116,72 +132,53 @@ footer a { color:#6fae9a; }
 </nav>
 
 <section class="booking-form">
-<h2>Book a Service</h2>
+<h2>Book a Detail</h2>
 
 <form action="https://usebasin.com/f/7de6409958c9" method="POST">
+<div class="form-grid">
 
-  <div class="form-grid">
+<div class="form-group"><label>Name</label><input type="text" name="name" required></div>
+<div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+<div class="form-group"><label>Phone</label><input type="tel" name="phone" required></div>
+<div class="form-group"><label>Vehicle Make & Model</label><input type="text" name="vehicle" required></div>
 
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" name="name" required>
-    </div>
+<div class="form-group">
+<label>Mobile Detailing Required?</label>
+<div class="radio-group">
+<label><input type="radio" name="mobile" value="Yes" required>Yes</label>
+<label><input type="radio" name="mobile" value="No" required>No</label>
+</div>
+</div>
 
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" name="email" required>
-    </div>
+<div class="form-group full">
+<label>Select Service(s)</label>
+<div class="multi-select">
+<div class="multi-select-display">Select service(s) ▼</div>
+<div class="multi-select-options">
+<label><input type="checkbox" name="services" value="Premium Interior Detail"> Premium Interior Detail</label>
+<label><input type="checkbox" name="services" value="Premium Exterior Detail"> Premium Exterior Detail</label>
+<label><input type="checkbox" name="services" value="Ultimate Interior Detail"> Ultimate Interior Detail</label>
+<label><input type="checkbox" name="services" value="Ultimate Exterior Detail"> Ultimate Exterior Detail</label>
+<label><input type="checkbox" name="services" value="Full Paint Correction"> Full Paint Correction</label>
+<label><input type="checkbox" name="services" value="Ceramic Coating"> Ceramic Coating</label>
+<label><input type="checkbox" name="services" value="Headlight Restoration"> Headlight Restoration</label>
+<label><input type="checkbox" name="services" value="Engine Bay Detail"> Engine Bay Detail</label>
+<label><input type="checkbox" name="services" value="Pre-Sale Detail"> Pre-Sale Detail</label>
+</div>
+</div>
+</div>
 
-    <div class="form-group">
-      <label>Phone</label>
-      <input type="tel" name="phone" required>
-    </div>
+<div class="form-group full">
+<label>Anything else we should know?</label>
+<textarea name="notes" rows="4" placeholder="Enter any special requests"></textarea>
+</div>
 
-    <div class="form-group">
-      <label>Vehicle Make & Model</label>
-      <input type="text" name="vehicle" required>
-    </div>
+<!-- Redirect to thank-you page -->
+<input type="hidden" name="_redirect" value="https://deltadetailing.co.nz/thank-you.html">
 
-    <div class="form-group">
-      <label>Mobile Detailing Required?</label>
-      <div class="radio-group">
-        <label><input type="radio" name="mobile" value="Yes" required>Yes</label>
-        <label><input type="radio" name="mobile" value="No" required>No</label>
-      </div>
-    </div>
-
-    <div class="form-group full">
-      <label>Select Service(s)</label>
-      <label><input type="checkbox" name="services" value="Premium Interior Detail"> Premium Interior Detail</label>
-      <label><input type="checkbox" name="services" value="Premium Exterior Detail"> Premium Exterior Detail</label>
-      <label><input type="checkbox" name="services" value="Ultimate Interior Detail"> Ultimate Interior Detail</label>
-      <label><input type="checkbox" name="services" value="Ultimate Exterior Detail"> Ultimate Exterior Detail</label>
-      <label><input type="checkbox" name="services" value="Full Paint Correction"> Full Paint Correction</label>
-      <label><input type="checkbox" name="services" value="Ceramic Coating"> Ceramic Coating</label>
-      <label><input type="checkbox" name="services" value="Headlight Restoration"> Headlight Restoration</label>
-      <label><input type="checkbox" name="services" value="Engine Bay Detail"> Engine Bay Detail</label>
-      <label><input type="checkbox" name="services" value="Pre-Sale Detail"> Pre-Sale Detail</label>
-    </div>
-
-    <div class="form-group full">
-      <label>Anything else we should know?</label>
-      <textarea name="notes" rows="4" placeholder="Enter any special requests"></textarea>
-    </div>
-
-    <!-- Redirect to thank-you page after submission -->
-    <input type="hidden" name="_redirect" value="https://deltadetailing.co.nz/thank-you.html">
-
-    <div class="form-group full">
-      <button type="submit" class="btn">Send Booking Request</button>
-    </div>
-
-  </div>
-</form>
-
-
-
-
-
+<div class="form-group full">
+<button type="submit" class="btn">Send Booking Request</button>
+</div>
 
 </div>
 </form>
@@ -197,38 +194,26 @@ footer a { color:#6fae9a; }
 <div class="mobile-cta"><a href="sms:0210629237">📞 Call / Text Delta Detailing</a></div>
 
 <script>
-// Multi-select dropdown
+// Multi-select dropdown logic
 const multiSelect = document.querySelector(".multi-select");
 const display = multiSelect.querySelector(".multi-select-display");
 const options = multiSelect.querySelector(".multi-select-options");
 
-display.addEventListener("click", ()=>{
-    options.style.display = options.style.display==="flex"?"none":"flex";
+display.addEventListener("click", () => {
+  options.style.maxHeight = options.style.maxHeight === "0px" || !options.style.maxHeight ? "300px" : "0px";
 });
 
-options.querySelectorAll("input[type=checkbox]").forEach(cb=>{
-    cb.addEventListener("change", ()=>{
-        const selected = Array.from(options.querySelectorAll("input:checked")).map(i=>i.value);
-        display.textContent = selected.length ? selected.join(", ")+" ▼" : "Select service(s) ▼";
-    });
+options.querySelectorAll("input[type=checkbox]").forEach(cb => {
+  cb.addEventListener("change", () => {
+    const selected = Array.from(options.querySelectorAll("input:checked")).map(i => i.value);
+    display.textContent = selected.length ? selected.join(", ") + " ▼" : "Select service(s) ▼";
+  });
 });
 
-document.addEventListener("click", e=>{
-    if(!multiSelect.contains(e.target)) options.style.display="none";
+document.addEventListener("click", e => {
+  if (!multiSelect.contains(e.target)) options.style.maxHeight = "0px";
 });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
