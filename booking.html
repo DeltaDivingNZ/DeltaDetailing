@@ -154,16 +154,16 @@ footer a { color:#6fae9a; }
       <label>Select Service(s)</label>
       <div class="multi-select">
         <div class="multi-select-display">Select service(s) ▼</div>
-        <div class="multi-select-options">
-          <label><input type="checkbox" name="services[]" value="Premium Interior Detail"> Premium Interior Detail</label>
-          <label><input type="checkbox" name="services[]" value="Premium Exterior Detail"> Premium Exterior Detail</label>
-          <label><input type="checkbox" name="services[]" value="Ultimate Interior Detail"> Ultimate Interior Detail</label>
-          <label><input type="checkbox" name="services[]" value="Ultimate Exterior Detail"> Ultimate Exterior Detail</label>
-          <label><input type="checkbox" name="services[]" value="Full Paint Correction"> Full Paint Correction</label>
-          <label><input type="checkbox" name="services[]" value="Ceramic Coating"> Ceramic Coating</label>
-          <label><input type="checkbox" name="services[]" value="Headlight Restoration"> Headlight Restoration</label>
-          <label><input type="checkbox" name="services[]" value="Engine Bay Detail"> Engine Bay Detail</label>
-          <label><input type="checkbox" name="services[]" value="Pre-Sale Detail"> Pre-Sale Detail</label>
+        <div class="multi-select-options" style="position:relative; display:flex; flex-direction:column; max-height:180px; overflow-y:auto;">
+          <label><input type="checkbox" name="services" value="Premium Interior Detail"> Premium Interior Detail</label>
+          <label><input type="checkbox" name="services" value="Premium Exterior Detail"> Premium Exterior Detail</label>
+          <label><input type="checkbox" name="services" value="Ultimate Interior Detail"> Ultimate Interior Detail</label>
+          <label><input type="checkbox" name="services" value="Ultimate Exterior Detail"> Ultimate Exterior Detail</label>
+          <label><input type="checkbox" name="services" value="Full Paint Correction"> Full Paint Correction</label>
+          <label><input type="checkbox" name="services" value="Ceramic Coating"> Ceramic Coating</label>
+          <label><input type="checkbox" name="services" value="Headlight Restoration"> Headlight Restoration</label>
+          <label><input type="checkbox" name="services" value="Engine Bay Detail"> Engine Bay Detail</label>
+          <label><input type="checkbox" name="services" value="Pre-Sale Detail"> Pre-Sale Detail</label>
         </div>
       </div>
     </div>
@@ -172,9 +172,6 @@ footer a { color:#6fae9a; }
       <label>Anything else we should know?</label>
       <textarea name="notes" rows="4" placeholder="Enter any special requests"></textarea>
     </div>
-
-    <!-- Hidden field to ensure Forminit sees the form is not empty -->
-    <input type="hidden" name="form_check" value="booking_form">
 
     <!-- Hidden redirect -->
     <input type="hidden" name="redirect" value="https://forminit.com/thank-you">
@@ -196,7 +193,7 @@ display.addEventListener("click", () => {
   options.style.display = options.style.display === "flex" ? "none" : "flex";
 });
 
-// Update display text while keeping inputs checked
+// Update display text without breaking checkbox values
 options.querySelectorAll("input[type=checkbox]").forEach(cb => {
   cb.addEventListener("change", () => {
     const selected = Array.from(options.querySelectorAll("input:checked")).map(i => i.value);
@@ -208,6 +205,7 @@ document.addEventListener("click", e => {
   if (!multiSelect.contains(e.target)) options.style.display = "none";
 });
 </script>
+
 
 
 </div>
@@ -247,6 +245,7 @@ document.addEventListener("click", e=>{
 
 </body>
 </html>
+
 
 
 
