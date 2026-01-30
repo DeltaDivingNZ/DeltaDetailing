@@ -118,8 +118,7 @@ footer a { color:#6fae9a; }
 <section class="booking-form">
 <h2>Book a Service</h2>
 
-<form name="booking" method="POST" data-netlify="true">
-<input type="hidden" name="form-name" value="booking">
+<form action="https://getform.io/f/szy8nngzjuy" method="POST">
 <div class="form-grid">
 
 <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
@@ -157,6 +156,16 @@ footer a { color:#6fae9a; }
 <label>Anything else we should know?</label>
 <textarea name="notes" rows="4" placeholder="Enter any special requests"></textarea>
 </div>
+
+<!-- Hidden redirect input -->
+<input type="hidden" name="redirect" value="https://forminit.com/thank-you">
+
+<div class="form-group full">
+<button type="submit" class="btn">Send Booking Request</button>
+</div>
+
+</div>
+</form>
 
 <div class="form-group full">
 <button type="submit" class="btn">Send Booking Request</button>
@@ -199,6 +208,7 @@ document.addEventListener("click", e=>{
 
 </body>
 </html>
+
 
 
 
