@@ -62,7 +62,7 @@ nav a:hover::after { width: 100%; }
 .form-group { display:flex; flex-direction:column; }
 .form-group.full { grid-column: span 2; }
 label { margin-bottom:6px; font-weight:bold; }
-input, textarea { padding:12px; background:#151515; border:1px solid #222; color:#e6e6e6; border-radius:6px; font-size:0.95rem; }
+input, select, textarea { padding:12px; background:#151515; border:1px solid #222; color:#e6e6e6; border-radius:6px; font-size:0.95rem; }
 textarea { resize:none; }
 /* MULTI-SELECT DROPDOWN */
 .multi-select { position:relative; }
@@ -96,7 +96,7 @@ textarea { resize:none; }
   display:flex;
   align-items:center;
 }
-.multi-select-options label:hover { background:#1a1a1a; }
+.multi-select-options label:hover { background: #1a1a1a; }
 .multi-select input[type=checkbox] { margin-right:10px; }
 /* RADIO BUTTONS */
 .radio-group { display:flex; gap:20px; align-items:center; }
@@ -132,7 +132,7 @@ footer a { color:#6fae9a; }
 </nav>
 
 <section class="booking-form">
-<h2>Book a Detail</h2>
+<h2>Book a Service</h2>
 
 <form action="https://usebasin.com/f/7de6409958c9" method="POST">
 <div class="form-grid">
@@ -140,7 +140,33 @@ footer a { color:#6fae9a; }
 <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
 <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
 <div class="form-group"><label>Phone</label><input type="tel" name="phone" required></div>
-<div class="form-group"><label>Vehicle Make & Model</label><input type="text" name="vehicle" required></div>
+
+<!-- Vehicle dropdowns -->
+<div class="form-group full">
+  <label>Vehicle Make</label>
+  <select id="vehicle-make" name="vehicle_make" required>
+    <option value="">Select Make</option>
+  </select>
+</div>
+
+<div class="form-group full">
+  <label>Vehicle Model</label>
+  <select id="vehicle-model" name="vehicle_model" required>
+    <option value="">Select Model</option>
+  </select>
+</div>
+
+<div class="form-group full">
+  <label>Vehicle Year</label>
+  <select id="vehicle-year" name="vehicle_year" required>
+    <option value="">Select Year</option>
+  </select>
+</div>
+
+<div class="form-group full">
+  <label>Vehicle Variant</label>
+  <input type="text" id="vehicle-variant" name="vehicle_variant" placeholder="Optional">
+</div>
 
 <div class="form-group">
 <label>Mobile Detailing Required?</label>
@@ -212,6 +238,58 @@ options.querySelectorAll("input[type=checkbox]").forEach(cb => {
 
 document.addEventListener("click", e => {
   if (!multiSelect.contains(e.target)) options.style.maxHeight = "0px";
+});
+
+// Vehicle dropdowns using NHTSA API
+const makeSelect = document.getElementById("vehicle-make");
+const modelSelect = document.getElementById("vehicle-model");
+const yearSelect = document.getElementById("vehicle-year");
+
+// Load makes
+fetch("https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json")
+  .then(res => res.json())
+  .then(data => {
+    const makes = data.Results;
+    makes.sort((a,b) => a.Make_Name.localeCompare(b.Make_Name));
+    makes.forEach(make => {
+      const option = document.createElement("option");
+      option.value = make.Make_Name;
+      option.textContent = make.Make_Name;
+      makeSelect.appendChild(option);
+    });
+  });
+
+// On make change, load models
+makeSelect.addEventListener("change", () => {
+  const make = makeSelect.value;
+  modelSelect.innerHTML = '<option value="">Select Model</option>';
+  yearSelect.innerHTML = '<option value="">Select Year</option>';
+  if(!make) return;
+
+  fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/${make}?format=json`)
+    .then(res => res.json())
+    .then(data => {
+      const models = data.Results;
+      models.sort((a,b) => a.Model_Name.localeCompare(b.Model_Name));
+      models.forEach(model => {
+        const option = document.createElement("option");
+        option.value = model.Model_Name;
+        option.textContent = model.Model_Name;
+        modelSelect.appendChild(option);
+      });
+    });
+});
+
+// On model change, populate years (last 30 years)
+modelSelect.addEventListener("change", () => {
+  yearSelect.innerHTML = '<option value="">Select Year</option>';
+  const currentYear = new Date().getFullYear();
+  for(let y=currentYear; y>=currentYear-30; y--){
+    const option = document.createElement("option");
+    option.value = y;
+    option.textContent = y;
+    yearSelect.appendChild(option);
+  }
 });
 </script>
 
